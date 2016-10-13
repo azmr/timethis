@@ -28,6 +28,7 @@ REM -wd#### - remove warning ####
 REM -D#####	- #define #### (=1)
 REM -Gm-	- turn off 'minimal rebuild' - no incremental build
 REM -Fm####	- provides location for compiler to put a .map file
+REM -P		- output precompiled file to filename.i
 REM
 REM -MTd	- use (d => debug version of) static CRT library - needed for running on XP
 REM /link -subsystem:windows,5.1 - ONLY FOR 32-BIT BUILDS!!! - needed for running on XP
