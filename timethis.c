@@ -5,9 +5,9 @@
 
 int main(int ArgCount, char *Args[])
 {
-	inittimer();
+	INITTIMER();
 	LARGE_INTEGER ZeroTime;
-	timethis(system(" "), ZeroTime);
+	TIMETHIS(system(" "), ZeroTime);
 	double ZeroTimeD = (double)ZeroTime.QuadPart / 1000000;
 
 	int ZeroCorrection = 320;
@@ -31,11 +31,11 @@ int main(int ArgCount, char *Args[])
 	*--NextSeg = '\0';
 
 	LARGE_INTEGER Elapsed;
-	timethis(system(ArgsString), Elapsed);
+	TIMETHIS(int Result = system(ArgsString), Elapsed);
 	Elapsed.QuadPart -= (ZeroTime.QuadPart - ZeroCorrection);
 	double ElapsedD = (double)Elapsed.QuadPart / 1000000;
 
 	printf("Time elapsed: %.04fs\n", ElapsedD);
 
-	return 0;
+	return Result;
 }
